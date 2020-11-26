@@ -5,7 +5,8 @@ app = Flask(__name__)
 @app.route("/", methods=["GET"])
 def get_my_ip():
     return render_template(
-        'ip.html', ip = request.environ['REMOTE_ADDR']
+        'index.html', ip = request.environ['REMOTE_ADDR'],
+        serverIP = request.host_url
         )
 
 @app.route("/api", methods=["GET"])
